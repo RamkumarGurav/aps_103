@@ -1,20 +1,20 @@
+/*** nextjs ***/
 import "./globals.css";
+/*** fonts ***/
 import { Poppins } from "next/font/google";
-import { Toaster } from "react-hot-toast";
-import Providers from "./providers";
-
+const font = Poppins({ weight: "400", subsets: ["latin"] });
+/*** meta ***/
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: {
-    default: "Ramkumar",
-    template: "%s | Portfolio",
-  },
-  description:
-    "Welcome to Ramkumar's portfolio. Explore my projects, skills, and experience.",
+  title: "Appolo Public Schools",
+  description: "Welcome to Appolo Public Schools",
 };
+/*** components ***/
+import { Toaster } from "react-hot-toast";
 
-const font = Poppins({ weight: "400", subsets: ["latin"] });
-
+/*****************************************************
+      RootLayout
+ ****************************************************/
 export default function RootLayout({
   children,
 }: {
@@ -26,11 +26,12 @@ export default function RootLayout({
         id="body"
         className={` ${font.className} max-w-[1536px] mx-auto  ||  bg-white  dark:bg-black dark:text-white text-black`}
       >
-        <Providers>
-          <Toaster position="bottom-right" toastOptions={{ duration: 3000 }} />
-          {children}
-        </Providers>
+        <Toaster position="bottom-right" toastOptions={{ duration: 3000 }} />
+        {children}
       </body>
     </html>
   );
 }
+/*****************************************************
+           other
+*****************************************************/

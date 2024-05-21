@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Modal from "./Modal";
 import Image from "next/image";
-import GalleryCarousel from "@/components/Carousel/GalleryCarousel";
+import GalleryCarousel from "../Carousels/GalleryCarousel";
 
 export default function GalleryModalContainer({
   data,
@@ -27,7 +27,7 @@ export default function GalleryModalContainer({
         initial={{ y: "100px", opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ type: "spring" }}
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={{ once: true, amount: 0 }}
         id="image-container"
         onClick={() => (modalOpen ? close() : open())}
         className="relative  w-full h-[240px] mx-auto cursor-pointer"
@@ -40,7 +40,7 @@ export default function GalleryModalContainer({
           className="object-cover "
           placeholder="blur"
           blurDataURL={blurUrl}
-          loading={keyIndex < 9 ? "eager" : "lazy"}
+          priority={keyIndex < 9}
         />
       </motion.div>
       <AnimatePresence initial={false} mode="wait" onExitComplete={() => null}>
@@ -59,6 +59,7 @@ export default function GalleryModalContainer({
                   width={700}
                   height={500}
                   className="min-w-full md:w-[650px] h-[250px] sm:h-[400px] object-contain"
+                  priority={keyIndex < 9}
                 />
               ))}
             </GalleryCarousel>

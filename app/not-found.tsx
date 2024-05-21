@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Poppins } from "next/font/google";
+import { Button } from "@/components/ui/button";
 const font = Poppins({ weight: "400", subsets: ["latin"] });
 const NotFoundPage = () => {
   return (
@@ -11,11 +12,8 @@ const NotFoundPage = () => {
           <p className="text-gray-500 mb-4">
             Sorry, the page you are looking for does not exist.
           </p>
-          <Link
-            href="/"
-            className={`p-4 py-2 bg-xblue text-xlight rounded font-thin text-center   uppercase  ${font.className}`}
-          >
-            Go home
+          <Link href="/">
+            <Button> Go home</Button>
           </Link>
         </div>
       </div>

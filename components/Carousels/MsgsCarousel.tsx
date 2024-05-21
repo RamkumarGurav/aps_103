@@ -11,11 +11,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useCallback, useRef } from "react";
-import { msgSlides } from "@/utils/displayData";
+import { msgSlides } from "@/lib/helpers/displayData";
 import { Lato } from "next/font/google";
 const font = Lato({ weight: "400", subsets: ["latin"] });
 
-export default function ToppersCarousel() {
+export default function MsgsCarousel() {
   const swiperRef = useRef<SwiperType>();
 
   return (

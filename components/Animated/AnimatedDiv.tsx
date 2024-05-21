@@ -6,6 +6,6 @@ interface AnimatedProps extends HTMLMotionProps<"p"> {
   children: React.ReactNode;
 }
 
-export default function AnimatedTitle({ children, ...rest }: AnimatedProps) {
+export default function AnimatedDiv({ children, ...rest }: AnimatedProps) {
   return <motion.div {...rest}>{children}</motion.div>;
 }

@@ -17,7 +17,7 @@ type Props = {
   [key: string]: any;
 };
 
-export function LoadingButton({
+export default function LoadingButton({
   isLoading = false,
   variant = "default",
   loadingText,
@@ -28,6 +28,7 @@ export function LoadingButton({
 }: Props) {
   return iconRight ? (
     <Button
+      type="submit"
       variant={`${variant}`}
       className={`${className} `} // Use the passed className
       disabled={isLoading ? true : false}
@@ -38,6 +39,7 @@ export function LoadingButton({
     </Button>
   ) : (
     <Button
+      type="submit"
       variant={`${variant}`}
       className={`${className} `} // Use the passed className
       disabled={isLoading ? true : false}

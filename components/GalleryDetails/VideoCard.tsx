@@ -15,7 +15,7 @@ export default function VideoCard({
       initial={{ y: "100px", opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ type: "spring" }}
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0 }}
     >
       <iframe
         width="100%"

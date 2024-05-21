@@ -89,7 +89,7 @@ export default function ToppersCarousel() {
                   fill
                   sizes="500px"
                   // Tailwind classes for styling the image
-                  className="object-cover hover:scale-[1.1]  transition-all duration-[.8s] ease-in-out"
+                  className="object-cover hover:scale-[1.1]  transition-all duration-300 ease-in-out"
                   // Placeholder for the image
                 />
               </div>
@@ -116,7 +116,7 @@ export default function ToppersCarousel() {
                   fill
                   sizes="500px"
                   // Tailwind classes for styling the image
-                  className="object-cover hover:scale-[1.1]  transition-all duration-[.8s] ease-in-out"
+                  className="object-cover hover:scale-[1.1]  transition-all duration-300 ease-in-out"
                   // Placeholder for the image
                 />
               </div>
@@ -142,7 +142,7 @@ export default function ToppersCarousel() {
                   fill
                   sizes="500px"
                   // Tailwind classes for styling the image
-                  className="object-cover hover:scale-[1.1]  transition-all duration-[.8s] ease-in-out"
+                  className="object-cover hover:scale-[1.1]  transition-all duration-300 ease-in-out"
                   // Placeholder for the image
                 />
               </div>
@@ -167,7 +167,7 @@ export default function ToppersCarousel() {
                   fill
                   sizes="500px"
                   // Tailwind classes for styling the image
-                  className="object-cover hover:scale-[1.1]  transition-all duration-[.8s] ease-in-out"
+                  className="object-cover hover:scale-[1.1]  transition-all duration-300 ease-in-out"
                   // Placeholder for the image
                 />
               </div>
@@ -191,7 +191,7 @@ export default function ToppersCarousel() {
                   fill
                   sizes="500px"
                   // Tailwind classes for styling the image
-                  className="object-cover hover:scale-[1.1]  transition-all duration-[.8s] ease-in-out"
+                  className="object-cover hover:scale-[1.1]  transition-all duration-300 ease-in-out"
                   // Placeholder for the image
                 />
               </div>

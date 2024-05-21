@@ -6,7 +6,7 @@ import errorHandler from "@/lib/helpers/errorHandler";
 const CONTACT_MESSAGE_FIELDS: any = {
   name: "Name",
   email: "Email",
-  contactNumber: "ContactNumber",
+  mobile: "Mobile",
   message: "Message",
 };
 
@@ -47,7 +47,8 @@ const validateRecaptchaV2 = async (
 export async function POST(req: NextRequest, res: NextResponse) {
   try {
     const data = await req.json();
-    if (!data.name || !data.email || !data.contactNumber || !data.message) {
+    console.log("request Data:", data);
+    if (!data.name || !data.email || !data.mobile || !data.message) {
       return NextResponse.json(
         {
           status: false,
@@ -62,14 +63,13 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
     const subject = data.subject;
     const responseKey = data.responseKey;
-    delete data.subject;
-    delete data.responseKey;
 
     const isRecaptchaValidated = await validateRecaptchaV2(
       process.env.RECAPTCHA2_IV_SECRET_KEY,
       responseKey
     );
-
+    delete data.subject;
+    delete data.responseKey;
     if (!isRecaptchaValidated) {
       throw new ApiError(400, "reCaptcha Validation Failed ,Please Try Again!");
     } else {
@@ -83,7 +83,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         {
           success: true,
           status: 200,
-          message: `${data.name},Email sent successfully`,
+          message: `Thank you! ${data.name}`,
         },
         {
           status: 200,

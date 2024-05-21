@@ -21,12 +21,13 @@ export default function GalleryCard({
       initial={{ y: "100px", opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ type: "spring" }}
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0 }}
       key={i}
       className=" rounded overflow-hidden w-[290px] sm:w-[385px] md:w-[330px] lg:w-[300px] xl:w-[385px]"
     >
       <Link
-        href={`/gallery_details/${id}`}
+        prefetch
+        href={`/gallery-details/${id}`}
         id="image-container"
         className="relative block w-full  h-[240px] mx-auto"
       >
@@ -38,6 +39,7 @@ export default function GalleryCard({
           className="object-cover "
           placeholder="blur"
           blurDataURL={blurDataUrl}
+          priority={i < 9}
         />
       </Link>
       <div className="text-gray-900 font-bold text-lg text-center my-2 text-wrap">

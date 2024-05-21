@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ApiError } from "next/dist/server/api-utils";
-import mongoose from "mongoose";
 export default function errorHandler(error: any) {
   console.error("Error in contact form API route:", error);
   // Include the error stack if available
@@ -10,11 +9,6 @@ export default function errorHandler(error: any) {
     return NextResponse.json(
       { success: false, status: error.statusCode, message: error.message },
       { status: error.statusCode }
-    );
-  } else if (error instanceof mongoose.Error.ValidationError) {
-    return NextResponse.json(
-      { success: false, status: 400, message: error.message },
-      { status: 400 }
     );
   } else {
     let message =
